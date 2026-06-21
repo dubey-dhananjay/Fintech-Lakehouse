@@ -16,34 +16,9 @@ This platform unifies structured and unstructured financial data into a high-per
 
 ## 🧱 Platform Architecture & Data Flow
 
-[Raw SEC Files & Market CSVs]
-│
-▼ (Ingestion via External Stages)
-┌────────────────────────────────────────────────────────┐
-│               SNOWFLAKE DATA LAKEHOUSE                 │
-│                                                        │
-│  🍁 BRONZE LAYER: Raw Variant Storage (No schema)      │
-│         │                                              │
-│         ▼ (dbt Transformations & Data Masking)         │
-│  🥈 SILVER LAYER: Cleansed, De-duplicated & Governed   │
-│         │                                              │
-│         ▼ (Dimensional Star-Schema Aggregations)       │
-│  🥇 GOLD LAYER: Business-Ready Facts & Dimensions      │
-└───────────────────────┬────────────────────────────────┘
-│
-┌────────────────┴────────────────┐
-▼ (Structured Data API)           ▼ (Unstructured Text Chunking)
-┌────────────────────────────────────────────────────────┐
-│                  LANGCHAIN GENAI LAYER                 │
-│                                                        │
-│  📊 Analytical Metrics   ↔   🧠 OpenAI / Claude Embeddings│
-└───────────────────────┬────────────────────────────────┘
-│ (Context Synthesis)
-▼
-┌────────────────────────────────────────────────────────┐
-│           STREAMLIT USER FRONTEND INTERFACE            │
-│   (Analytical Dashboards + Grounded AI Chat Copilot)   │
-└────────────────────────────────────────────────────────┘
+<img width="218" height="281" alt="image" src="https://github.com/user-attachments/assets/d366dadc-2461-4dd6-bf7e-7ca7e1e28ea8" />
+
+
 
 
 ---
